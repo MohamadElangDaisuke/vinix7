@@ -13,6 +13,12 @@ const team = [
     role: "Backend Developer",
     desc: "Mengelola database dan sistem backend aplikasi.",
   },
+  {
+  id: "3",
+  name: "Zazilla Sindy Agustina",
+  role: "UI/UX Designer",
+  desc: "Merancang tampilan dan pengalaman pengguna aplikasi agar mudah digunakan dan nyaman."
+  },
 ];
 
 export default function Team() {
