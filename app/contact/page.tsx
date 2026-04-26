@@ -9,58 +9,55 @@ export default function Contact() {
     pesan: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: any) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     alert("Pesan berhasil dikirim!");
     setForm({ nama: "", email: "", pesan: "" });
   };
 
   return (
-    <div className="space-y-6 px-4 md:px-10 lg:px-20">
-
+    <div className="space-y-6">
+      
       {/* Judul */}
-      <div className="text-center md:text-left">
-        <h1 className="text-2xl md:text-3xl font-bold text-green-800">
+      <div>
+        <h1 className="text-3xl font-bold text-green-800">
           Hubungi Kami
         </h1>
-        <p className="mt-2 text-sm md:text-base text-gray-600 leading-relaxed">
+        <p className="mt-2 text-gray-600">
           Jika Anda memiliki pertanyaan atau ingin bekerja sama,
           silakan hubungi kami melalui form berikut.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
+      <div className="grid md:grid-cols-2 gap-6">
+        
         {/* Info Kontak */}
-        <div className="bg-white p-4 md:p-6 rounded-xl shadow space-y-3">
+        <div className="bg-white p-5 rounded-xl shadow space-y-3">
           <h2 className="text-lg font-semibold text-green-700">
             Informasi Kontak
           </h2>
-
-          <p className="text-sm text-gray-600">
-            📧 Email: edusantri@gmail.com
+          <p className="text-gray-600 text-sm">
+            Email: edusantri@gmail.com
           </p>
-          <p className="text-sm text-gray-600">
-            📞 Telepon: 0812-3456-7890
+          <p className="text-gray-600 text-sm">
+            Telepon: 0812-3456-7890
           </p>
-          <p className="text-sm text-gray-600">
-            📍 Banyuwangi, Jawa Timur
+          <p className="text-gray-600 text-sm">
+            Alamat: Banyuwangi, Jawa Timur
           </p>
         </div>
 
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-4 md:p-6 rounded-xl shadow space-y-4"
+          className="bg-white p-5 rounded-xl shadow space-y-4"
         >
           <h2 className="text-lg font-semibold text-green-700">
             Kirim Pesan
@@ -72,7 +69,7 @@ export default function Contact() {
             placeholder="Nama"
             value={form.nama}
             onChange={handleChange}
-            className="w-full p-2 md:p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+            className="w-full p-2 border rounded-md"
             required
           />
 
@@ -82,7 +79,7 @@ export default function Contact() {
             placeholder="Email"
             value={form.email}
             onChange={handleChange}
-            className="w-full p-2 md:p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+            className="w-full p-2 border rounded-md"
             required
           />
 
@@ -91,16 +88,16 @@ export default function Contact() {
             placeholder="Pesan"
             value={form.pesan}
             onChange={handleChange}
+            className="w-full p-2 border rounded-md"
             rows={4}
-            className="w-full p-2 md:p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
             required
           />
 
           <button
             type="submit"
-            className="w-full bg-green-700 text-white py-2 rounded-md hover:bg-green-800 transition"
+            className="bg-green-700 text-white px-4 py-2 rounded-md hover:bg-green-800 transition"
           >
-            Kirim Pesan
+            Kirim
           </button>
         </form>
 

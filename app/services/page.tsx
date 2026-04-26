@@ -1,5 +1,5 @@
 async function getServices() {
-  // simulasi data fetching (tetap sesuai tugas)
+  // simulasi data fetching (biar tetap memenuhi tugas)
   return [
     {
       id: 1,
@@ -33,38 +33,35 @@ export default async function Services() {
   const services = await getServices();
 
   return (
-    <div className="space-y-6 px-4 md:px-10 lg:px-20">
-
+    <div className="space-y-6">
+      
       {/* Judul */}
-      <div className="text-center md:text-left">
-        <h1 className="text-2xl md:text-3xl font-bold text-green-800">
+      <div>
+        <h1 className="text-3xl font-bold text-green-800">
           Layanan Kami
         </h1>
-        <p className="mt-2 text-sm md:text-base text-gray-600 leading-relaxed">
+        <p className="mt-2 text-gray-600">
           EduSantri Tech menyediakan berbagai layanan digital untuk mendukung
           pengelolaan akademik pesantren secara modern.
         </p>
       </div>
 
       {/* Card Services */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
+      <div className="grid md:grid-cols-2 gap-4">
         {services.map((item) => (
           <div
             key={item.id}
-            className="p-4 md:p-5 bg-white rounded-xl shadow hover:shadow-lg transition duration-300 border border-gray-100"
+            className="p-5 bg-white rounded-xl shadow hover:shadow-lg transition"
           >
-            <h2 className="text-base md:text-lg font-semibold text-green-700">
+            <h2 className="text-lg font-semibold text-green-700">
               {item.title}
             </h2>
-            <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+            <p className="mt-2 text-gray-600 text-sm">
               {item.desc}
             </p>
           </div>
         ))}
-
       </div>
-
     </div>
   );
 }

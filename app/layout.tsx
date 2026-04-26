@@ -8,16 +8,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen bg-green-50">
-
-        {/* Sidebar */}
+      <body className="flex">
         <Sidebar />
 
-        {/* Main Content */}
-        <main className="flex-1 p-4 md:p-6 lg:p-8 ml-0 md:ml-64">
+        <main className="ml-64 w-full min-h-screen bg-green-50 p-6">
           {children}
         </main>
-
       </body>
     </html>
   );
